@@ -22,7 +22,7 @@ class InvoiceController extends Controller
         $data->address = $request->address;
         $data->item = $request->item;
     	$data->product_name = $request->name;
-    	$data->price = $request->sale_price;
+    	$data->price = $request->unit_price;
     	$data->quantity = $request->quantity;
         $data->total = $request->total;
         $data->payment = $request->payment;
@@ -81,6 +81,17 @@ class InvoiceController extends Controller
     public function allInvoices(){
         $invoices = Invoice::all();
         return view('Admin.all_invoices',compact('invoices'));
+    }
+
+    public function dashboardInvoices(){
+        $invoices = Invoice::all();
+
+        $monthlySalesData = DB::table('invoices')
+                        ->select(DB::raw('MONTH(created_at) as month, SUM(total) as total_sales'))
+                        ->groupBy(DB::raw('MONTH(created_at)'))
+                        ->get();
+
+        return view('dashboard',compact('invoices', 'monthlySalesData'));
     }
 
     public function soldProducts(){

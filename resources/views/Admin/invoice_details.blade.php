@@ -110,7 +110,7 @@
 						<table>
 							<tr>
 								<td class="title">
-									<h2>SEP Company Ltd.</h2>
+									<h2>TechInventory Company</h2>
 								</td>
 
 								<td>
@@ -127,9 +127,9 @@
 						<table>
 							<tr>
 								<td>
-									SEP Company Ltd.<br />
-									GEC<br />
-									Chittagong, Bangladesh
+									TechInventory Company<br />
+									RYNNN<br />
+									Urdaneta, Pangasinan
 								</td>
 
 								<td>
